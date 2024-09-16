@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Container, Grid2, Typography, Button, Box, useMediaQuery } from '@mui/material';
+import complexes from './data/projects.json'; // JSON со списком ЖК
+import GalleryDesktop from './components/GalleryDesktop';
+import GalleryMobile from './components/GalleryMobile';
 
-function App() {
+const App = () => {
+  const [selectedComplex, setSelectedComplex] = useState(complexes[0]);
+  const isMobile = useMediaQuery('(max-width:600px)');
+
+  const handleSelectComplex = (complex) => {
+    setSelectedComplex(complex);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Grid2 container spacing={2}>
+        {/* Левый список ЖК */}
+        <Grid2 item xs={12} md={3}>
+          <Typography variant="h6" gutterBottom>Тип ремонта</Typography>
+          <Box display="flex" flexDirection="column">
+            {complexes.map((complex) => (
+              <Button
+                key={complex.id}
+                variant={complex.id === selectedComplex.id ? 'contained' : 'outlined'}
+                onClick={() => handleSelectComplex(complex)}
+                style={{ marginBottom: '8px' }}
+              >
+                {complex.name}
+              </Button>
+            ))}
+          </Box>
+        </Grid2>
+
+        {/* Правая часть галереи */}
+        <Grid2 item xs={12} md={9}>
+          {isMobile ? (
+            <GalleryMobile complex={selectedComplex} />
+          ) : (
+            <GalleryDesktop complex={selectedComplex} />
+          )}
+        </Grid2>
+      </Grid2>
+    </Container>
   );
-}
+};
 
 export default App;

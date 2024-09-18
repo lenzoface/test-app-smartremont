@@ -1,14 +1,8 @@
 import { createTheme } from '@mui/material/styles';
-import { red, blue } from '@mui/material/colors';
-
-
-// Define your dark blue color
-const darkBlue = blue[900]; // Example dark blue color
 
 // Create a theme with red as the primary color
 const theme = createTheme({
   palette: {
-    mode: 'light',
     primary: {
       main: '#00004B',
     },
@@ -19,6 +13,9 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Roboto',
   },
+  shape: {
+    borderRadius: 0, // Set borderRadius to 0 globally
+  },
   components: {
     MuiButton: {
       styleOverrides: {
@@ -28,11 +25,6 @@ const theme = createTheme({
         },
       },
     },
-    MuiTypography: {
-      fontWeightBold: {
-        color: darkBlue,
-      },
-    }
   },
 });
 

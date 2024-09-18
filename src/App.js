@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Container, Typography, Button } from "@mui/material";
+import { Container, Typography, Button, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import complexes from "./data/projects.json"; // JSON со списком ЖК
 import ComplexDetail from "./components/ComplexDetail"; // Import the detailed component
 import { ThemeProvider } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import theme from "./styles/theme";
-import { blue } from "@mui/material/colors";
-import CustomButton from "./components/CustomButton"
+import CustomButton from "./components/CustomButton";
 
 const App = () => {
   const [selectedComplex, setSelectedComplex] = useState(complexes[0]);
@@ -23,8 +21,9 @@ const App = () => {
         <Grid container spacing={2}>
           <Grid item size={3}>
             <Typography
-              sx={{ fontWeight: 800, mb: 3, color: blue[900] }}
+              sx={{ fontWeight: 700, mb: 2 }}
               variant="h3"
+              color="primary"
               align="left"
               gutterBottom
             >
@@ -46,9 +45,7 @@ const App = () => {
               Сумма экономии рассчитана в сравнении с суммой цен этого же
               перечня товаров по отдельности
             </Typography>
-            <CustomButton>
-              ВЫБРАТЬ ДИЗАЙН
-            </CustomButton>
+            <CustomButton mb={3}>ВЫБРАТЬ ДИЗАЙН</CustomButton>
           </Grid>
           <Grid size={3}></Grid>
           {/* Second full-width section (Centered text) */}

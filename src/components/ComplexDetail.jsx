@@ -54,7 +54,6 @@ function ComplexDetail({ complexes }) {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'cover',
-                borderRadius: '8px',
               }}
             />
             {/* </SwipeableViews> */}

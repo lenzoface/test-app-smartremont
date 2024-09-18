@@ -101,7 +101,7 @@ const App = () => {
 
             {/* Render buttons for complexes based on the selected type */}
             <Grid item md={9}>
-              <Typography variant="body1" fontWeight="light">
+              <Typography variant="body1" fontWeight="light" color="textSecondary">
                 Найдено {complexList.length} обьектов:
               </Typography>
               <Box sx={{ overflowX: 'auto', whiteSpace: 'nowrap', marginTop: '10px' }}>

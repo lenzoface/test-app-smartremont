@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Typography, Button, Select, MenuItem } from "@mui/material";
+import { Container, Typography, Button, Select, MenuItem, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import complexesData from "./data/projects.json"; // JSON со списком ЖК
 import ComplexDetail from "./components/ComplexDetail"; // Import the detailed component
@@ -75,49 +75,65 @@ const App = () => {
 
         {/* Third row */}
         <Grid container spacing={2}>
-          <Grid size={3} >
-          {/* Dropdown for selecting the type */}
-          <Grid item md={4} mb={2}>
-            <Select
-              value={selectedType}
-              onChange={handleTypeChange}
-              fullWidth
-              variant="outlined"
-            >
-              {Object.keys(complexesData[0].type).map((type) => (
-                <MenuItem key={type} value={type}>
-                  {type}
-                </MenuItem>
-              ))}
-            </Select>
-          </Grid>
-
-          {/* Render buttons for complexes based on the selected type */}
-          <Grid item md={9}>
-            {complexList.map((complex) => (
-              <Button
-                key={complex.id}
-                variant={
-                  selectedComplex?.id === complex.id ? "contained" : "outlined"
-                }
+          <Grid size={3}>
+            {/* Dropdown for selecting the type */}
+            <Grid item md={4} mb={2}>
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: "600", mb: 1 }}
                 color="primary"
-                onClick={() => setSelectedComplex(complex)}
-                style={{ margin: "5px" }}
               >
-                {complex.name}
-              </Button>
-            ))}
-          </Grid>
-        </Grid>
+                ТИП РЕМОНТА
+              </Typography>
+              <Select
+                value={selectedType}
+                onChange={handleTypeChange}
+                fullWidth
+                variant="outlined"
+              >
+                {Object.keys(complexesData[0].type).map((type) => (
+                  <MenuItem key={type} value={type}>
+                    {type}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>
 
-        {/* Render ComplexDetail if a complex is selected */}
-        {selectedComplex && (
-          <Grid container size={9} spacing={2} mt={4}>
-            <Grid item xs={12}>
-              <ComplexDetail complexes={selectedComplex} />
+            {/* Render buttons for complexes based on the selected type */}
+            <Grid item md={9}>
+              <Typography variant="body1" fontWeight="light">
+                Найдено {complexList.length} обьектов:
+              </Typography>
+              <Box sx={{ overflowX: 'auto', whiteSpace: 'nowrap', marginTop: '10px' }}>
+              <Grid container spacing={1}>
+              {complexList.map((complex) => (
+                <Button
+                  key={complex.id}
+                  variant={
+                    selectedComplex?.id === complex.id
+                      ? "contained"
+                      : "outlined"
+                  }
+                  color="primary"
+                  onClick={() => setSelectedComplex(complex)}
+                  style={{ margin: "5px" }}
+                >
+                  {complex.name}
+                </Button>
+              ))}
+              </Grid>
+              </Box>
             </Grid>
           </Grid>
-        )}
+
+          {/* Render ComplexDetail if a complex is selected */}
+          {selectedComplex && (
+            <Grid container size={9} spacing={2} mt={4}>
+              <Grid item xs={12}>
+                <ComplexDetail complexes={selectedComplex} />
+              </Grid>
+            </Grid>
+          )}
         </Grid>
       </Container>
     </ThemeProvider>

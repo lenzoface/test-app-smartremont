@@ -21,7 +21,7 @@ const App = () => {
       <Container>
         {/* First row - Full width, text aligned left */}
         <Grid container spacing={2}>
-          <Grid item size={2}>
+          <Grid item size={3}>
             <Typography
               sx={{ fontWeight: 800, mb: 3, color: blue[900] }}
               variant="h3"
@@ -34,10 +34,15 @@ const App = () => {
         </Grid>
 
         {/* Second row */}
-        <Grid container spacing={2}>
+        <Grid container spacing={2} mb={4}>
           {/* First full-width section (Text and button) */}
-          <Grid item size={2} md={6} mb={3}>
-            <Typography variant="body1" align="left" gutterBottom>
+          <Grid item size={3} md={6} mb={3}>
+            <Typography
+              variant="body1"
+              align="left"
+              gutterBottom
+              sx={{ mb: 4 }}
+            >
               Сумма экономии рассчитана в сравнении с суммой цен этого же
               перечня товаров по отдельности
             </Typography>
@@ -45,11 +50,17 @@ const App = () => {
               ВЫБРАТЬ ДИЗАЙН
             </CustomButton>
           </Grid>
-
+          <Grid size={3}></Grid>
           {/* Second full-width section (Centered text) */}
-          <Grid item size={8} md={6}>
-            <Typography variant="h4" align="center" gutterBottom>
-              Мы успешно завершили уже более 450 ремонтов
+          <Grid item size={5} md={6} pt={8} pl={6}>
+            <Typography
+              variant="h4"
+              align="center"
+              color="primary"
+              sx={{ lineHeight: 1.5, fontWeight: 500 }}
+            >
+              Мы успешно завершили уже{" "}
+              <span style={{ color: "#D32F2F" }}>более 450</span> ремонтов
             </Typography>
           </Grid>
         </Grid>

@@ -12,6 +12,44 @@
       "address": "г. Алматы, ул. Академика, 48",
       "description": "Высота потолков 3 метра...",
       "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
-    }
+    },
+    
+        {
+          "type": {
+            "Smart Comfort": [
+              {
+                "id": 1,
+                "name": "ЖК Бриллиантовый",
+                "address": "Нур-Султан, ул. Академика, 40",
+                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
+                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
+              },
+              {
+                "id": 2,
+                "name": "ЖК Малахитовый",
+                "address": "г. Алматы, ул. Академика, 48",
+                "description": "Высота потолков 3 метра...",
+                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
+              }
+            ],
+            "Premium": [
+              {
+                "id": 1,
+                "name": "ЖК Бриллиантовый",
+                "address": "Нур-Султан, ул. Академика, 40",
+                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
+                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
+              },
+              {
+                "id": 2,
+                "name": "ЖК Малахитовый",
+                "address": "г. Алматы, ул. Академика, 48",
+                "description": "Высота потолков 3 метра...",
+                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
+              }
+            ]
+          }
+        }
   ]
+
   

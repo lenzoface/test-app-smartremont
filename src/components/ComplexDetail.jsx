@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Typography, Button, Box } from '@mui/material';
 import Grid from '@mui/material/Grid2';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../styles/theme';
 // import SwipeableViews from "react-swipeable-views-react-18-fix";
 
 // import { useSwipeable } from 'react-swipeable'; // For swipe gestures
@@ -29,10 +31,11 @@ function ComplexDetail({ complexes }) {
   // });
 
   return (
+    <ThemeProvider theme={theme}>
     <div>
       <Grid container spacing={2}>
         {/* Row 1: Images */}
-        <Grid item xs={12}>
+        <Grid item size={12}>
         
           <Box            
             style={{
@@ -79,24 +82,11 @@ function ComplexDetail({ complexes }) {
             >
               Next
             </Button>
-            <Typography
-              style={{
-                position: 'absolute',
-                right: '10px',
-                bottom: '10px',
-                color: '#fff',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                padding: '5px',
-                borderRadius: '4px',
-              }}
-            >
-              {currentImageIndex + 1}/{complexes.images.length}
-            </Typography>
           </Box>
         </Grid>
 
         {/* Row 2: Name, Address, and Image Counter */}
-        <Grid item xs={12} md={10}>
+        <Grid item size={10} md={10}>
           <Typography variant="h5" component="div" style={{ fontWeight: 'bold' }}>
             {complexes.name}
           </Typography>
@@ -104,20 +94,21 @@ function ComplexDetail({ complexes }) {
             {complexes.address}
           </Typography>
         </Grid>
-        <Grid item xs={12} md={2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Typography>
+        <Grid item size={2} md={2} style={{ display: 'flex', justifyContent: 'center' }}>
+          <Typography style={{ alignItems: 'right', justifyContent: 'right' }}>
             {currentImageIndex + 1}/{complexes.images.length}
           </Typography>
         </Grid>
 
         {/* Row 3: Description */}
-        <Grid item xs={12} md={10}>
+        <Grid item size={12} md={10}>
           <Typography variant="body1">
             {complexes.description}
           </Typography>
         </Grid>
       </Grid>
     </div>
+  </ThemeProvider>
   );
 }
 

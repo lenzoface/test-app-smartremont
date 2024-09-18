@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Typography, Button, Select, MenuItem} from "@mui/material";
+import { Container, Typography, Button, Select, MenuItem } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import complexesData from "./data/projects.json"; // JSON со списком ЖК
 import ComplexDetail from "./components/ComplexDetail"; // Import the detailed component
@@ -15,13 +15,12 @@ const App = () => {
   const [selectedType, setSelectedType] = useState(defaultType);
   const [selectedComplex, setSelectedComplex] = useState(defaultComplex);
 
-
-// Handle selection change for type
-const handleTypeChange = (event) => {
-  const newType = event.target.value;
+  // Handle selection change for type
+  const handleTypeChange = (event) => {
+    const newType = event.target.value;
     setSelectedType(newType);
-  setSelectedComplex(complexesData[0].type[newType][0]); // Reset selected complex when type changes
-};
+    setSelectedComplex(complexesData[0].type[newType][0]); // Reset selected complex when type changes
+  };
 
   // Get the list of complexes for the selected type
   const complexList = complexesData[0].type[selectedType];
@@ -76,8 +75,9 @@ const handleTypeChange = (event) => {
 
         {/* Third row */}
         <Grid container spacing={2}>
+          <Grid size={3} >
           {/* Dropdown for selecting the type */}
-          <Grid item xs={12} md={4} mb={2}>
+          <Grid item md={4} mb={2}>
             <Select
               value={selectedType}
               onChange={handleTypeChange}
@@ -93,11 +93,13 @@ const handleTypeChange = (event) => {
           </Grid>
 
           {/* Render buttons for complexes based on the selected type */}
-          <Grid item xs={12} md={8}>
+          <Grid item md={9}>
             {complexList.map((complex) => (
               <Button
                 key={complex.id}
-                variant={selectedComplex?.id === complex.id ? "contained" : "outlined"}
+                variant={
+                  selectedComplex?.id === complex.id ? "contained" : "outlined"
+                }
                 color="primary"
                 onClick={() => setSelectedComplex(complex)}
                 style={{ margin: "5px" }}
@@ -110,12 +112,13 @@ const handleTypeChange = (event) => {
 
         {/* Render ComplexDetail if a complex is selected */}
         {selectedComplex && (
-          <Grid container spacing={2} mt={4}>
+          <Grid container size={9} spacing={2} mt={4}>
             <Grid item xs={12}>
               <ComplexDetail complexes={selectedComplex} />
             </Grid>
           </Grid>
         )}
+        </Grid>
       </Container>
     </ThemeProvider>
   );

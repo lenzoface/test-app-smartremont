@@ -8,14 +8,19 @@ import theme from "./styles/theme";
 import CustomButton from "./components/CustomButton";
 
 const App = () => {
-  const [selectedType, setSelectedType] = useState(Object.keys(complexesData[0].type)[0]); // Default to the first type
-  const [selectedComplex, setSelectedComplex] = useState(null); // Start with no complex selected
+  // Extract the first type and the first item within that type as default
+  const defaultType = Object.keys(complexesData[0].type)[0]; // First type key
+  const defaultComplex = complexesData[0].type[defaultType][0]; // First complex of the first type
+
+  const [selectedType, setSelectedType] = useState(defaultType);
+  const [selectedComplex, setSelectedComplex] = useState(defaultComplex);
 
 
 // Handle selection change for type
 const handleTypeChange = (event) => {
-  setSelectedType(event.target.value);
-  setSelectedComplex(null); // Reset selected complex when type changes
+  const newType = event.target.value;
+    setSelectedType(newType);
+  setSelectedComplex(complexesData[0].type[newType][0]); // Reset selected complex when type changes
 };
 
   // Get the list of complexes for the selected type

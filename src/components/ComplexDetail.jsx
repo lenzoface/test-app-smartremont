@@ -61,10 +61,10 @@ const handleNextImage = () => {
               onClick={handlePrevImage}
               style={{
                 position: 'absolute',
-                left: '10px',
+                right: '75px',
                 bottom: '10px',
                 color: '#fff',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundColor: 'red',
               }}
             >
               Prev
@@ -76,7 +76,7 @@ const handleNextImage = () => {
                 right: '10px',
                 bottom: '10px',
                 color: '#fff',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundColor: 'red',
               }}
             >
               Next
@@ -86,11 +86,11 @@ const handleNextImage = () => {
 
         {/* Row 2: Name, Address, and Image Counter */}
         <Grid item size={10} md={10}>
-          <Typography variant="h5" component="div" style={{ fontWeight: 'bold' }}>
-            {complexes.name}
+          <Typography variant="h5" component="div" style={{ fontWeight: 'bold' }} display="inline">
+            {complexes.name} – 
           </Typography>
-          <Typography variant="body1" color="textSecondary">
-            {complexes.address}
+          <Typography variant="h5" color="textSecondary" display="inline">
+          &nbsp;{complexes.address}
           </Typography>
         </Grid>
         <Grid item size={2} md={2} style={{ display: 'flex', justifyContent: 'center' }}>

@@ -1,18 +1,25 @@
 import React, { useState } from "react";
-import { Container, Typography, Button, Box } from "@mui/material";
+import { Container, Typography, Button, Select, MenuItem} from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import complexes from "./data/projects.json"; // JSON со списком ЖК
+import complexesData from "./data/projects.json"; // JSON со списком ЖК
 import ComplexDetail from "./components/ComplexDetail"; // Import the detailed component
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./styles/theme";
 import CustomButton from "./components/CustomButton";
 
 const App = () => {
-  const [selectedComplex, setSelectedComplex] = useState(complexes[0]);
+  const [selectedType, setSelectedType] = useState(Object.keys(complexesData[0].type)[0]); // Default to the first type
+  const [selectedComplex, setSelectedComplex] = useState(null); // Start with no complex selected
 
-  const handleSelectComplex = (complexes) => {
-    setSelectedComplex(complexes);
-  };
+
+// Handle selection change for type
+const handleTypeChange = (event) => {
+  setSelectedType(event.target.value);
+  setSelectedComplex(null); // Reset selected complex when type changes
+};
+
+  // Get the list of complexes for the selected type
+  const complexList = complexesData[0].type[selectedType];
 
   return (
     <ThemeProvider theme={theme}>
@@ -64,31 +71,46 @@ const App = () => {
 
         {/* Third row */}
         <Grid container spacing={2}>
-          {/* Render buttons for complexes */}
-          <Grid item size={2}>
-            {complexes.map((complexes) => (
+          {/* Dropdown for selecting the type */}
+          <Grid item xs={12} md={4} mb={2}>
+            <Select
+              value={selectedType}
+              onChange={handleTypeChange}
+              fullWidth
+              variant="outlined"
+            >
+              {Object.keys(complexesData[0].type).map((type) => (
+                <MenuItem key={type} value={type}>
+                  {type}
+                </MenuItem>
+              ))}
+            </Select>
+          </Grid>
+
+          {/* Render buttons for complexes based on the selected type */}
+          <Grid item xs={12} md={8}>
+            {complexList.map((complex) => (
               <Button
-                key={complexes.id}
-                variant={
-                  complexes.id === selectedComplex?.id
-                    ? "contained"
-                    : "outlined"
-                }
-                color="primary" // Ensure buttons use the red color from the theme
-                onClick={() => handleSelectComplex(complexes)}
+                key={complex.id}
+                variant={selectedComplex?.id === complex.id ? "contained" : "outlined"}
+                color="primary"
+                onClick={() => setSelectedComplex(complex)}
                 style={{ margin: "5px" }}
               >
-                {complexes.name}
+                {complex.name}
               </Button>
             ))}
           </Grid>
-          {/* Render ComplexDetail if a complex is selected */}
-          {selectedComplex && (
-            <Grid item size={10}>
+        </Grid>
+
+        {/* Render ComplexDetail if a complex is selected */}
+        {selectedComplex && (
+          <Grid container spacing={2} mt={4}>
+            <Grid item xs={12}>
               <ComplexDetail complexes={selectedComplex} />
             </Grid>
-          )}
-        </Grid>
+          </Grid>
+        )}
       </Container>
     </ThemeProvider>
   );

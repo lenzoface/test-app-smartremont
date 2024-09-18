@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Typography, Button, Box } from '@mui/material';
+import { ThemeProvider, Typography, Button, Box } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { ThemeProvider } from '@mui/material/styles';
 import theme from '../styles/theme';
 // import SwipeableViews from "react-swipeable-views-react-18-fix";
 
@@ -11,17 +10,18 @@ function ComplexDetail({ complexes }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
 
-  const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === complexes.images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+// Handle image navigation
+const handlePrevImage = () => {
+  setCurrentImageIndex((prevIndex) =>
+    prevIndex > 0 ? prevIndex - 1 : complexes.images.length - 1
+  );
+};
 
-  const handlePrevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? complexes.images.length - 1 : prevIndex - 1
-    );
-  };
+const handleNextImage = () => {
+  setCurrentImageIndex((prevIndex) =>
+    prevIndex < complexes.images.length - 1 ? prevIndex + 1 : 0
+  );
+};
 
   // const swipeHandlers = useSwipeable({
   //   onSwipedLeft: handleNextImage,

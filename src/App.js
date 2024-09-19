@@ -166,7 +166,7 @@ const App = () => {
                 border: "1px solid #ddd", // Optional: add a border for visibility
               }}
             >
-              <Grid item xs={12}>
+              <Grid item>
                 <ComplexDetail complexes={selectedComplex} />
               </Grid>
             </Grid>

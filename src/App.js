@@ -63,9 +63,9 @@ const App = () => {
         </Grid>
 
         {/* Second row */}
-        <Grid container spacing={2} mb={4}>
+        <Grid container spacing={2} mb={6}>
           {/* First full-width section (Text and button) */}
-          <Grid item size={{ xs: 12, md: 3 }} mb={3}>
+          <Grid item size={{ xs: 12, md: 3 }} mb={3} display="flex" flexDirection="column" justifyContent="center">
             <Typography
               variant="body1"
               align="left"
@@ -83,7 +83,8 @@ const App = () => {
             item
             size={{ xs: 12, md: 5 }}
             pt={{ xs: 0, md: 8 }}
-            pl={{ xs: 0, md: 6 }}            
+            pl={{ xs: 0, md: 6 }}
+            pr={{xs: 6, md: 0}}            
             align={{xs: 'left', md: 'center'}}
           >
             <Typography

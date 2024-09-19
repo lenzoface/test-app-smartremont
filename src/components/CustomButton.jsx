@@ -7,8 +7,12 @@ const StyledButton = styled(Button)({
   color: '#D32F2F',             // Red text
   fontWeight: 'bold',           // Bold text
   borderRadius: '0',
+  padding: '15px',
+  paddingLeft: '20px',
+  paddingRight: '20px',
   letterSpacing: '1px',  // Increase letter spacing
   backgroundColor: 'transparent',
+  display:"flex", flexDirection:"column", justifyContent:"center",
   '&:hover': {
     backgroundColor: 'rgba(211, 47, 47, 0.1)', // Slight red hover effect
     borderColor: '#D32F2F',

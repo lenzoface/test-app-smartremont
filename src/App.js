@@ -33,20 +33,40 @@ const App = () => {
   const complexList = complexesData[0].type[selectedType];
 
   const rightGridRef = useRef(null);
-  const [rightGridHeight, setRightGridHeight] = useState(0);
+const [rightGridHeight, setRightGridHeight] = useState(0);
 
-  useEffect(() => {
-    // Update the height of the right grid
+useEffect(() => {
+  const updateRightGridHeight = () => {
     if (rightGridRef.current) {
       setRightGridHeight(rightGridRef.current.offsetHeight);
     }
-  }, [selectedComplex]); // Update height when selected complex changes
+  };
+
+  // Initial height calculation
+  updateRightGridHeight();
+
+  // Update height when window resizes
+  // window.addEventListener("resize", updateRightGridHeight);
+
+  // Cleanup listener on unmount
+  return () => {
+    window.removeEventListener("resize", updateRightGridHeight);
+  };
+}, [selectedComplex]); // Recalculate height when selected complex changes
+
+// Update height whenever a new complex is selected
+useEffect(() => {
+  if (rightGridRef.current) {
+    setRightGridHeight(rightGridRef.current.offsetHeight);
+  }
+}, [selectedComplex]);
+
 
   const isMdScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <ThemeProvider theme={theme}>
-      <Container sx={{my: 4}}>
+      <Container sx={{ my: 4 }}>
         {/* First row - Full width, text aligned left */}
         <Grid container spacing={2}>
           <Grid item size={{ xs: 12, md: 3 }}>
@@ -65,7 +85,14 @@ const App = () => {
         {/* Second row */}
         <Grid container spacing={2} mb={6}>
           {/* First full-width section (Text and button) */}
-          <Grid item size={{ xs: 12, md: 3 }} mb={3} display="flex" flexDirection="column" justifyContent="center">
+          <Grid
+            item
+            size={{ xs: 12, md: 3 }}
+            mb={3}
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+          >
             <Typography
               variant="body1"
               align="left"
@@ -84,8 +111,8 @@ const App = () => {
             size={{ xs: 12, md: 5 }}
             pt={{ xs: 0, md: 8 }}
             pl={{ xs: 0, md: 6 }}
-            pr={{xs: 6, md: 0}}            
-            align={{xs: 'left', md: 'center'}}
+            pr={{ xs: 6, md: 0 }}
+            align={{ xs: "left", md: "center" }}
           >
             <Typography
               variant="h4"
@@ -102,11 +129,11 @@ const App = () => {
         <Grid container spacing={2} sx={{ display: "flex" }}>
           <Grid
             size={{ xs: 12, md: 3 }}
-            sx={{
-              overflowY: "auto",
-              maxHeight: rightGridHeight, // Set max height based on right component
-              // border: "1px solid #ddd", // Optional: add a border for visibility
-            }}
+            // sx={{
+            //   overflowY: "auto",
+            //   maxHeight: rightGridHeight, // Set max height based on right component
+            //   // border: "1px solid #ddd", // Optional: add a border for visibility
+            // }}
           >
             {/* Dropdown for selecting the type */}
             <Grid item md={4} mb={2}>
@@ -132,25 +159,29 @@ const App = () => {
             </Grid>
 
             {/* Render buttons for complexes based on the selected type */}
-            <Grid item>
-            {isMdScreen ? ( 
-              <Typography
-                variant="body1"
-                sx={{ fontWeight: "600", mb: 1 }}
-                color="primary"
-              >
-                СДЕЛАННЫЕ РЕМОНТЫ
-              </Typography>
-            ) : (
-              <Typography
-                variant="body1"
-                fontWeight="light"
-                color="textSecondary"
-                mb={1}
-              >
-                Найдено {complexList.length} обьектов:
-              </Typography>
-            )}
+            <Grid item sx={{
+              overflowY: "auto",
+              maxHeight: rightGridHeight // Set max height based on right component
+              // border: "1px solid #ddd", // Optional: add a border for visibility
+            }}>
+              {isMdScreen ? (
+                <Typography
+                  variant="body1"
+                  sx={{ fontWeight: "600", mb: 1 }}
+                  color="primary"
+                >
+                  СДЕЛАННЫЕ РЕМОНТЫ
+                </Typography>
+              ) : (
+                <Typography
+                  variant="body1"
+                  fontWeight="light"
+                  color="textSecondary"
+                  mb={1}
+                >
+                  Найдено {complexList.length} обьектов:
+                </Typography>
+              )}
 
               <Grid container spacing={1} direction="column">
                 {isMdScreen ? (

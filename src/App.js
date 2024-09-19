@@ -44,22 +44,8 @@ useEffect(() => {
 
   // Initial height calculation
   updateRightGridHeight();
-
-  // Update height when window resizes
-  // window.addEventListener("resize", updateRightGridHeight);
-
-  // Cleanup listener on unmount
-  // return () => {
-  //   window.removeEventListener("resize", updateRightGridHeight);
-  // };
 }, []); 
 
-// Update height whenever a new complex is selected
-// useEffect(() => {
-//   if (rightGridRef.current) {
-//     setRightGridHeight(rightGridRef.current.offsetHeight);
-//   }
-// }, [selectedComplex]);
 
 
   const isMdScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -129,11 +115,6 @@ useEffect(() => {
         <Grid container spacing={2} sx={{ display: "flex" }}>
           <Grid
             size={{ xs: 12, md: 3 }}
-            // sx={{
-            //   overflowY: "auto",
-            //   maxHeight: rightGridHeight, // Set max height based on right component
-            //   // border: "1px solid #ddd", // Optional: add a border for visibility
-            // }}
           >
             {/* Dropdown for selecting the type */}
             <Grid item md={4} mb={2}>

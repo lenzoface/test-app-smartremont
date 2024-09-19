@@ -33,25 +33,24 @@ const App = () => {
   const complexList = complexesData[0].type[selectedType];
 
   const rightGridRef = useRef(null);
-const [rightGridHeight, setRightGridHeight] = useState(0);
+  const [rightGridHeight, setRightGridHeight] = useState(0);
 
-useEffect(() => {
-  const updateRightGridHeight = () => {
-    if (rightGridRef.current) {
-      setRightGridHeight(rightGridRef.current.offsetHeight);
-    }
-  };
+  useEffect(() => {
+    const updateRightGridHeight = () => {
+      if (rightGridRef.current) {
+        setRightGridHeight(rightGridRef.current.offsetHeight);
+      }
+    };
 
-  // Initial height calculation
-  updateRightGridHeight();
-}, []); 
-
-
+    // Initial height calculation
+    updateRightGridHeight();
+  }, []);
 
   const isMdScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <ThemeProvider theme={theme}>
+
       <Container sx={{ my: 4 }}>
         {/* First row - Full width, text aligned left */}
         <Grid container spacing={2}>
@@ -113,9 +112,7 @@ useEffect(() => {
 
         {/* Third row */}
         <Grid container spacing={2} sx={{ display: "flex" }}>
-          <Grid
-            size={{ xs: 12, md: 3 }}
-          >
+          <Grid size={{ xs: 12, md: 3 }}>
             {/* Dropdown for selecting the type */}
             <Grid item md={4} mb={2}>
               <Typography
@@ -140,11 +137,14 @@ useEffect(() => {
             </Grid>
 
             {/* Render buttons for complexes based on the selected type */}
-            <Grid item sx={{
-              overflowY: "auto",
-              maxHeight: rightGridHeight // Set max height based on right component
-              // border: "1px solid #ddd", // Optional: add a border for visibility
-            }}>
+            <Grid
+              item
+              sx={{
+                overflowY: "auto",
+                maxHeight: rightGridHeight, // Set max height based on right component
+                // border: "1px solid #ddd", // Optional: add a border for visibility
+              }}
+            >
               {isMdScreen ? (
                 <Typography
                   variant="body1"

@@ -5,7 +5,7 @@ import {
   Button,
   Select,
   MenuItem,
-  Box,
+  useMediaQuery,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import complexesData from "./data/projects.json"; // JSON со списком ЖК
@@ -42,12 +42,14 @@ const App = () => {
     }
   }, [selectedComplex]); // Update height when selected complex changes
 
+  const isMdScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <ThemeProvider theme={theme}>
-      <Container>
+      <Container sx={{my: 4}}>
         {/* First row - Full width, text aligned left */}
         <Grid container spacing={2}>
-          <Grid item size={3}>
+          <Grid item size={{ xs: 12, md: 3 }}>
             <Typography
               sx={{ fontWeight: 700, mb: 2 }}
               variant="h3"
@@ -63,7 +65,7 @@ const App = () => {
         {/* Second row */}
         <Grid container spacing={2} mb={4}>
           {/* First full-width section (Text and button) */}
-          <Grid item size={3} md={6} mb={3}>
+          <Grid item size={{ xs: 12, md: 3 }} mb={3}>
             <Typography
               variant="body1"
               align="left"
@@ -75,12 +77,17 @@ const App = () => {
             </Typography>
             <CustomButton mb={3}>ВЫБРАТЬ ДИЗАЙН</CustomButton>
           </Grid>
-          <Grid size={3}></Grid>
+          <Grid size={{ xs: 12, md: 3 }}></Grid>
           {/* Second full-width section (Centered text) */}
-          <Grid item size={5} md={6} pt={8} pl={6}>
+          <Grid
+            item
+            size={{ xs: 12, md: 5 }}
+            pt={{ xs: 0, md: 8 }}
+            pl={{ xs: 0, md: 6 }}            
+            align={{xs: 'left', md: 'center'}}
+          >
             <Typography
               variant="h4"
-              align="center"
               color="primary"
               sx={{ lineHeight: 1.5, fontWeight: 500 }}
             >
@@ -93,11 +100,11 @@ const App = () => {
         {/* Third row */}
         <Grid container spacing={2} sx={{ display: "flex" }}>
           <Grid
-            size={3}
+            size={{ xs: 12, md: 3 }}
             sx={{
               overflowY: "auto",
               maxHeight: rightGridHeight, // Set max height based on right component
-              border: "1px solid #ddd", // Optional: add a border for visibility
+              // border: "1px solid #ddd", // Optional: add a border for visibility
             }}
           >
             {/* Dropdown for selecting the type */}
@@ -124,7 +131,16 @@ const App = () => {
             </Grid>
 
             {/* Render buttons for complexes based on the selected type */}
-            <Grid item md={9}>
+            <Grid item>
+            {isMdScreen ? ( 
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: "600", mb: 1 }}
+                color="primary"
+              >
+                СДЕЛАННЫЕ РЕМОНТЫ
+              </Typography>
+            ) : (
               <Typography
                 variant="body1"
                 fontWeight="light"
@@ -133,22 +149,47 @@ const App = () => {
               >
                 Найдено {complexList.length} обьектов:
               </Typography>
+            )}
 
               <Grid container spacing={1}>
-                {complexList.map((complex) => (
-                  <Button
-                    key={complex.id}
-                    variant={
-                      selectedComplex?.id === complex.id
-                        ? "contained"
-                        : "outlined"
-                    }
-                    color="primary"
-                    onClick={() => setSelectedComplex(complex)}
-                  >
-                    {complex.name}
-                  </Button>
-                ))}
+                {isMdScreen ? (
+                  <Grid item xs={12}>
+                    <Select
+                      variant="outlined"
+                      fullWidth
+                      value={selectedComplex?.id || ""}
+                      onChange={(e) => {
+                        const selectedId = e.target.value;
+                        const complex = complexList.find(
+                          (c) => c.id === selectedId
+                        );
+                        setSelectedComplex(complex);
+                      }}
+                    >
+                      {complexList.map((complex) => (
+                        <MenuItem key={complex.id} value={complex.id}>
+                          {complex.name}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </Grid>
+                ) : (
+                  complexList.map((complex) => (
+                    <Grid item key={complex.id}>
+                      <Button
+                        variant={
+                          selectedComplex?.id === complex.id
+                            ? "contained"
+                            : "outlined"
+                        }
+                        color="primary"
+                        onClick={() => setSelectedComplex(complex)}
+                      >
+                        {complex.name}
+                      </Button>
+                    </Grid>
+                  ))
+                )}
               </Grid>
             </Grid>
           </Grid>
@@ -157,13 +198,13 @@ const App = () => {
           {selectedComplex && (
             <Grid
               container
-              size={9}
+              size={{ xs: 12, md: 9 }}
               spacing={2}
               mt={4}
               ref={rightGridRef}
               sx={{
                 flexShrink: 0, // Prevent shrinking
-                border: "1px solid #ddd", // Optional: add a border for visibility
+                // border: "1px solid #ddd", // Optional: add a border for visibility
               }}
             >
               <Grid item>

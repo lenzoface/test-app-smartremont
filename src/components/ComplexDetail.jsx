@@ -128,7 +128,7 @@ function ComplexDetail({ complexes }) {
             <Typography
               style={{ alignItems: "right", justifyContent: "right" }}
             >
-              {currentImageIndex + 1}/{complexes.images.length}
+              <b>{currentImageIndex + 1}</b>/{complexes.images.length}
             </Typography>
           </Grid>
 

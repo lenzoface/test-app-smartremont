@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
   Typography,
@@ -31,6 +31,16 @@ const App = () => {
 
   // Get the list of complexes for the selected type
   const complexList = complexesData[0].type[selectedType];
+
+  const rightGridRef = useRef(null);
+  const [rightGridHeight, setRightGridHeight] = useState(0);
+
+  useEffect(() => {
+    // Update the height of the right grid
+    if (rightGridRef.current) {
+      setRightGridHeight(rightGridRef.current.offsetHeight);
+    }
+  }, [selectedComplex]); // Update height when selected complex changes
 
   return (
     <ThemeProvider theme={theme}>
@@ -81,8 +91,15 @@ const App = () => {
         </Grid>
 
         {/* Third row */}
-        <Grid container spacing={2}>
-          <Grid size={3}>
+        <Grid container spacing={2} sx={{ display: "flex" }}>
+          <Grid
+            size={3}
+            sx={{
+              overflowY: "auto",
+              maxHeight: rightGridHeight, // Set max height based on right component
+              border: "1px solid #ddd", // Optional: add a border for visibility
+            }}
+          >
             {/* Dropdown for selecting the type */}
             <Grid item md={4} mb={2}>
               <Typography
@@ -112,43 +129,43 @@ const App = () => {
                 variant="body1"
                 fontWeight="light"
                 color="textSecondary"
+                mb={1}
               >
                 Найдено {complexList.length} обьектов:
               </Typography>
-              <Box
-                sx={{
-                  overflowX: "auto",
-                  whiteSpace: "nowrap",
-                  marginTop: "10px",
-                }}
-              >
-                <Grid container spacing={1}>
-                  {complexList.map((complex) => (
-                    <Button
-                      key={complex.id}
-                      variant={
-                        selectedComplex?.id === complex.id
-                          ? "contained"
-                          : "outlined"
-                      }
-                      color="primary"
-                      onClick={() => setSelectedComplex(complex)}
-                      // style={{ backgroundColor: selectedComplex?.id === complex.id
-                      //   ? "#00004B"
-                      //   : "gray" }}
-                        
-                    >
-                      {complex.name}
-                    </Button>
-                  ))}
-                </Grid>
-              </Box>
+
+              <Grid container spacing={1}>
+                {complexList.map((complex) => (
+                  <Button
+                    key={complex.id}
+                    variant={
+                      selectedComplex?.id === complex.id
+                        ? "contained"
+                        : "outlined"
+                    }
+                    color="primary"
+                    onClick={() => setSelectedComplex(complex)}
+                  >
+                    {complex.name}
+                  </Button>
+                ))}
+              </Grid>
             </Grid>
           </Grid>
 
           {/* Render ComplexDetail if a complex is selected */}
           {selectedComplex && (
-            <Grid container size={9} spacing={2} mt={4}>
+            <Grid
+              container
+              size={9}
+              spacing={2}
+              mt={4}
+              ref={rightGridRef}
+              sx={{
+                flexShrink: 0, // Prevent shrinking
+                border: "1px solid #ddd", // Optional: add a border for visibility
+              }}
+            >
               <Grid item xs={12}>
                 <ComplexDetail complexes={selectedComplex} />
               </Grid>

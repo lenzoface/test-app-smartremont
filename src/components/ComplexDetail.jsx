@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ThemeProvider, Typography, Button, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import theme from "../styles/theme";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 // import SwipeableViews from "react-swipeable-views-react-18-fix";
 
 // import { useSwipeable } from 'react-swipeable'; // For swipe gestures
@@ -39,7 +41,7 @@ function ComplexDetail({ complexes }) {
               sx={{
                 // Aspect ratio container
                 position: "relative",
-                width: '100%',
+                width: "100%",
                 // Set different aspect ratios using padding-top for responsive design
                 paddingTop: {
                   xs: "100%", // Square aspect ratio on mobile (1:1)
@@ -66,30 +68,41 @@ function ComplexDetail({ complexes }) {
                 }}
               />
               {/* </SwipeableViews> */}
-              <Button
-                onClick={handlePrevImage}
-                style={{
+              <Box
+                sx={{
                   position: "absolute",
-                  right: "75px",
-                  bottom: "10px",
-                  color: "#fff",
-                  backgroundColor: "red",
+                  bottom: "0px",
+                  right: "0px",
+                  display: "flex",
+                  gap: "0", // No space between buttons
                 }}
               >
-                Prev
-              </Button>
-              <Button
-                onClick={handleNextImage}
-                style={{
-                  position: "absolute",
-                  right: "10px",
-                  bottom: "10px",
-                  color: "#fff",
-                  backgroundColor: "red",
-                }}
-              >
-                Next
-              </Button>
+                <Button
+                  onClick={handlePrevImage}
+                  sx={{
+                    padding: '1rem',
+                    color: "#fff",
+                    backgroundColor: "red",
+                    "&:hover": {
+                      backgroundColor: "#c62828", // Darker red on hover
+                    },
+                  }}
+                >
+                  <ArrowBackIosNewIcon /> {/* Use symbol for left arrow */}
+                </Button>
+                <Button
+                  onClick={handleNextImage}
+                  sx={{
+                    color: "#fff",
+                    backgroundColor: "red",
+                    "&:hover": {
+                      backgroundColor: "#c62828", // Darker red on hover
+                    },
+                  }}
+                >
+                  <ArrowForwardIosIcon /> {/* Use symbol for right arrow */}
+                </Button>
+              </Box>
             </Box>
           </Grid>
 

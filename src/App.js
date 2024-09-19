@@ -50,7 +50,6 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-
       <Container sx={{ my: 4 }}>
         {/* First row - Full width, text aligned left */}
         <Grid container spacing={2}>
@@ -74,9 +73,8 @@ const App = () => {
             item
             size={{ xs: 12, md: 3 }}
             mb={3}
-            display="flex"
+            sx={{ display: isMdScreen ? "flex" : "block" }}
             flexDirection="column"
-            justifyContent="center"
           >
             <Typography
               variant="body1"
@@ -87,7 +85,7 @@ const App = () => {
               Сумма экономии рассчитана в сравнении с суммой цен этого же
               перечня товаров по отдельности
             </Typography>
-            <CustomButton mb={3}>ВЫБРАТЬ ДИЗАЙН</CustomButton>
+            <CustomButton>ВЫБРАТЬ ДИЗАЙН</CustomButton>
           </Grid>
           <Grid size={{ xs: 12, md: 3 }}></Grid>
           {/* Second full-width section (Centered text) */}
@@ -117,7 +115,7 @@ const App = () => {
             <Grid item md={4} mb={2}>
               <Typography
                 variant="body1"
-                sx={{ fontWeight: "600", mb: 1 }}
+                sx={{ fontWeight: "600", mb: 1, letterSpacing: "1px" }}
                 color="primary"
               >
                 ТИП РЕМОНТА
@@ -196,6 +194,13 @@ const App = () => {
                             : "outlined"
                         }
                         color="primary"
+                        sx={{
+                          paddingY: "0.7em",
+                          backgroundColor:
+                            selectedComplex?.id === complex.id
+                              ? "contained" // No background for selected button
+                              : "#eaedf4", // Background color for unselected buttons
+                        }}
                         onClick={() => setSelectedComplex(complex)}
                       >
                         {complex.name}

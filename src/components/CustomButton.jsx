@@ -10,7 +10,7 @@ const StyledButton = styled(Button)({
   padding: '15px',
   paddingLeft: '20px',
   paddingRight: '20px',
-  letterSpacing: '1px',  // Increase letter spacing
+  letterSpacing: '1.5px',  // Increase letter spacing
   backgroundColor: 'transparent',
   display:"flex", flexDirection:"column", justifyContent:"center",
   '&:hover': {

@@ -21,7 +21,11 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           // Any global styles you want for buttons can be added here
-          textTransform: "none", // Example: Disable uppercase transformation
+          // Example: Disable uppercase transformation
+          letterSpacing: '1px',
+          
+          border: 'none'
+        
         },
       },
     },

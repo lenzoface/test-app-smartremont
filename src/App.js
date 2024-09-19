@@ -49,17 +49,17 @@ useEffect(() => {
   // window.addEventListener("resize", updateRightGridHeight);
 
   // Cleanup listener on unmount
-  return () => {
-    window.removeEventListener("resize", updateRightGridHeight);
-  };
-}, [selectedComplex]); // Recalculate height when selected complex changes
+  // return () => {
+  //   window.removeEventListener("resize", updateRightGridHeight);
+  // };
+}, []); 
 
 // Update height whenever a new complex is selected
-useEffect(() => {
-  if (rightGridRef.current) {
-    setRightGridHeight(rightGridRef.current.offsetHeight);
-  }
-}, [selectedComplex]);
+// useEffect(() => {
+//   if (rightGridRef.current) {
+//     setRightGridHeight(rightGridRef.current.offsetHeight);
+//   }
+// }, [selectedComplex]);
 
 
   const isMdScreen = useMediaQuery(theme.breakpoints.down("md"));

@@ -4,145 +4,335 @@
             "Smart Comfort": [
               {
                 "id": 1,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
+                "name": "ЖК Золотой Парк",
+                "address": "г. Алматы, ул. Жибек Жолы, 12",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "images": [
+                  "https://picsum.photos/id/10/700",
+                  "https://picsum.photos/id/20/700",
+                  "https://picsum.photos/id/30/700"
+                ]
               },
               {
                 "id": 2,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
+                "name": "ЖК Солнечный Город",
+                "address": "г. Нур-Султан, ул. Астана, 58",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "images": [
+                  "https://picsum.photos/id/40/700",
+                  "https://picsum.photos/id/50/700",
+                  "https://picsum.photos/id/60/700"
+                ]
+              },
+              {
+                "id": 3,
+                "name": "ЖК Летний Квартал",
+                "address": "г. Алматы, ул. Тимирязева, 23",
+                "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                "images": [
+                  "https://picsum.photos/id/70/700",
+                  "https://picsum.photos/id/80/700",
+                  "https://picsum.photos/id/90/700"
+                ]
+              },
+              {
+                "id": 4,
+                "name": "ЖК Снежный Вальс",
+                "address": "г. Нур-Султан, ул. Бейбитшилик, 74",
+                "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "images": [
+                  "https://picsum.photos/id/100/700",
+                  "https://picsum.photos/id/110/700",
+                  "https://picsum.photos/id/120/700"
+                ]
+              },
+              {
+                "id": 5,
+                "name": "ЖК Оазис Алматы",
+                "address": "г. Алматы, ул. Абай, 101",
+                "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "images": [
+                  "https://picsum.photos/id/130/700",
+                  "https://picsum.photos/id/140/700",
+                  "https://picsum.photos/id/150/700"
+                ]
+              },
+              {
+                "id": 6,
+                "name": "ЖК Элегант Тауэр",
+                "address": "г. Нур-Султан, ул. Сарыарка, 12",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "images": [
+                  "https://picsum.photos/id/160/700",
+                  "https://picsum.photos/id/170/700",
+                  "https://picsum.photos/id/180/700"
+                ]
+              },
+              {
+                "id": 7,
+                "name": "ЖК Сфера",
+                "address": "г. Алматы, ул. Тауке Хана, 87",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "images": [
+                  "https://picsum.photos/id/190/700",
+                  "https://picsum.photos/id/200/700",
+                  "https://picsum.photos/id/210/700"
+                ]
+              },
+              {
+                "id": 8,
+                "name": "ЖК Вершина",
+                "address": "г. Нур-Султан, ул. Мангилик Ел, 54",
+                "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                "images": [
+                  "https://picsum.photos/id/220/700",
+                  "https://picsum.photos/id/230/700",
+                  "https://picsum.photos/id/240/700"
+                ]
+              },
+              {
+                "id": 9,
+                "name": "ЖК Зеленая Долина",
+                "address": "г. Алматы, ул. Калдаякова, 30",
+                "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "images": [
+                  "https://picsum.photos/id/250/700",
+                  "https://picsum.photos/id/260/700",
+                  "https://picsum.photos/id/270/700"
+                ]
+              },
+              {
+                "id": 10,
+                "name": "ЖК Престиж",
+                "address": "г. Нур-Султан, ул. Хусейн Бен Тальх, 98",
+                "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "images": [
+                  "https://picsum.photos/id/280/700",
+                  "https://picsum.photos/id/290/700",
+                  "https://picsum.photos/id/300/700"
+                ]
+              },
+              {
+                "id": 11,
+                "name": "ЖК Панорама",
+                "address": "г. Алматы, ул. Байтурсынова, 66",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "images": [
+                  "https://picsum.photos/id/310/700",
+                  "https://picsum.photos/id/320/700",
+                  "https://picsum.photos/id/330/700"
+                ]
+              },
+              {
+                "id": 12,
+                "name": "ЖК Новый Век",
+                "address": "г. Нур-Султан, ул. Кенесары, 83",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "images": [
+                  "https://picsum.photos/id/340/700",
+                  "https://picsum.photos/id/350/700",
+                  "https://picsum.photos/id/360/700"
+                ]
+              },
+              {
+                "id": 13,
+                "name": "ЖК Время",
+                "address": "г. Алматы, ул. Пушкина, 56",
+                "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                "images": [
+                  "https://picsum.photos/id/370/700",
+                  "https://picsum.photos/id/380/700",
+                  "https://picsum.photos/id/390/700"
+                ]
+              },
+              {
+                "id": 14,
+                "name": "ЖК Город-Сад",
+                "address": "г. Нур-Султан, ул. Сарыарка, 22",
+                "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "images": [
+                  "https://picsum.photos/id/400/700",
+                  "https://picsum.photos/id/410/700",
+                  "https://picsum.photos/id/420/700"
+                ]
+              },
+              {
+                "id": 15,
+                "name": "ЖК Простор",
+                "address": "г. Алматы, ул. Гоголя, 14",
+                "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "images": [
+                  "https://picsum.photos/id/430/700",
+                  "https://picsum.photos/id/440/700",
+                  "https://picsum.photos/id/450/700"
+                ]
+              },
+              {
+                "id": 16,
+                "name": "ЖК Модерн",
+                "address": "г. Нур-Султан, ул. Кабанбай Батыра, 45",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "images": [
+                  "https://picsum.photos/id/460/700",
+                  "https://picsum.photos/id/470/700",
+                  "https://picsum.photos/id/480/700"
+                ]
+              },
+              {
+                "id": 17,
+                "name": "ЖК Синергия",
+                "address": "г. Алматы, ул. Розыбакиева, 81",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "images": [
+                  "https://picsum.photos/id/490/700",
+                  "https://picsum.photos/id/500/700",
+                  "https://picsum.photos/id/10/700"
+                ]
+              },
+              {
+                "id": 18,
+                "name": "ЖК Арт",
+                "address": "г. Нур-Султан, ул. Толе Би, 67",
+                "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                "images": [
+                  "https://picsum.photos/id/20/700",
+                  "https://picsum.photos/id/30/700",
+                  "https://picsum.photos/id/40/700"
+                ]
+              },
+              {
+                "id": 19,
+                "name": "ЖК Вдохновение",
+                "address": "г. Алматы, ул. Сейфуллина, 92",
+                "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "images": [
+                  "https://picsum.photos/id/50/700",
+                  "https://picsum.photos/id/60/700",
+                  "https://picsum.photos/id/70/700"
+                ]
+              },
+              {
+                "id": 20,
+                "name": "ЖК Светлый",
+                "address": "г. Нур-Султан, ул. Акмешит, 21",
+                "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "images": [
+                  "https://picsum.photos/id/80/700",
+                  "https://picsum.photos/id/90/700",
+                  "https://picsum.photos/id/100/700"
+                ]
+              },
+              {
+                "id": 21,
+                "name": "ЖК Авангард",
+                "address": "г. Алматы, ул. Байсейтова, 39",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "images": [
+                  "https://picsum.photos/id/110/700",
+                  "https://picsum.photos/id/120/700",
+                  "https://picsum.photos/id/130/700"
+                ]
+              },
+              {
+                "id": 22,
+                "name": "ЖК Престиж Плюс",
+                "address": "г. Нур-Султан, ул. Жерентаева, 85",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "images": [
+                  "https://picsum.photos/id/140/700",
+                  "https://picsum.photos/id/150/700",
+                  "https://picsum.photos/id/160/700"
+                ]
+              },
+              {
+                "id": 23,
+                "name": "ЖК Уют",
+                "address": "г. Алматы, ул. Жетысу, 66",
+                "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                "images": [
+                  "https://picsum.photos/id/170/700",
+                  "https://picsum.photos/id/180/700",
+                  "https://picsum.photos/id/190/700"
+                ]
+              },
+              {
+                "id": 24,
+                "name": "ЖК Секрет",
+                "address": "г. Нур-Султан, ул. Аркалык, 71",
+                "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "images": [
+                  "https://picsum.photos/id/200/700",
+                  "https://picsum.photos/id/210/700",
+                  "https://picsum.photos/id/220/700"
+                ]
               }
             ],
             "Premium": [
               {
-                "id": 1,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
+                "id": 25,
+                "name": "ЖК Шедевр",
+                "address": "г. Алматы, ул. Ташкент, 52",
+                "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "images": [
+                  "https://picsum.photos/id/230/700",
+                  "https://picsum.photos/id/240/700",
+                  "https://picsum.photos/id/250/700"
+                ]
               },
               {
-                "id": 2,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
+                "id": 26,
+                "name": "ЖК Орион",
+                "address": "г. Нур-Султан, ул. Ботанический, 63",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "images": [
+                  "https://picsum.photos/id/260/700",
+                  "https://picsum.photos/id/270/700",
+                  "https://picsum.photos/id/280/700"
+                ]
               },
               {
-                "id": 3,
-                "name": "ЖК Бебровый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
+                "id": 27,
+                "name": "ЖК Искра",
+                "address": "г. Алматы, ул. Сакена Сейфуллина, 80",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "images": [
+                  "https://picsum.photos/id/290/700",
+                  "https://picsum.photos/id/300/700",
+                  "https://picsum.photos/id/310/700"
+                ]
               },
               {
-                "id": 4,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
+                "id": 28,
+                "name": "ЖК Ампир",
+                "address": "г. Нур-Султан, ул. Орынбор, 11",
+                "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                "images": [
+                  "https://picsum.photos/id/320/700",
+                  "https://picsum.photos/id/330/700",
+                  "https://picsum.photos/id/340/700"
+                ]
               },
               {
-                "id": 5,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
+                "id": 29,
+                "name": "ЖК Галактика",
+                "address": "г. Алматы, ул. Казахфильм, 95",
+                "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "images": [
+                  "https://picsum.photos/id/350/700",
+                  "https://picsum.photos/id/360/700",
+                  "https://picsum.photos/id/370/700"
+                ]
               },
               {
-                "id": 6,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
-              },
-              {
-                "id": 7,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
-              },
-              {
-                "id": 8,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
-              },
-              {
-                "id": 9,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
-              },
-              {
-                "id": 10,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
-              },
-              {
-                "id": 11,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
-              },
-              {
-                "id": 12,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
-              },
-              {
-                "id": 13,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
-              },
-              {
-                "id": 14,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
-              },
-              {
-                "id": 15,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
-              },
-              {
-                "id": 16,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
-              },
-              {
-                "id": 17,
-                "name": "ЖК Бриллиантовый",
-                "address": "Нур-Султан, ул. Академика, 40",
-                "description": "Делали ремонт не по нашему проекту, а реализовывали чужой проект...",
-                "images": ["/images/brilliant_1.jpg", "/images/brilliant_2.jpg"]
-              },
-              {
-                "id": 18,
-                "name": "ЖК Малахитовый",
-                "address": "г. Алматы, ул. Академика, 48",
-                "description": "Высота потолков 3 метра...",
-                "images": ["/images/malakhit_1.jpg", "/images/malakhit_2.jpg"]
+                "id": 30,
+                "name": "ЖК Ривьера",
+                "address": "г. Нур-Султан, ул. Пушкинская, 29",
+                "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "images": [
+                  "https://picsum.photos/id/380/700",
+                  "https://picsum.photos/id/390/700",
+                  "https://picsum.photos/id/400/700"
+                ]
               }
             ]
           }

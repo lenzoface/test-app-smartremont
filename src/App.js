@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Container, Typography, Button, Select, MenuItem, Box } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Button,
+  Select,
+  MenuItem,
+  Box,
+} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import complexesData from "./data/projects.json"; // JSON со списком ЖК
 import ComplexDetail from "./components/ComplexDetail"; // Import the detailed component
@@ -101,27 +108,40 @@ const App = () => {
 
             {/* Render buttons for complexes based on the selected type */}
             <Grid item md={9}>
-              <Typography variant="body1" fontWeight="light" color="textSecondary">
+              <Typography
+                variant="body1"
+                fontWeight="light"
+                color="textSecondary"
+              >
                 Найдено {complexList.length} обьектов:
               </Typography>
-              <Box sx={{ overflowX: 'auto', whiteSpace: 'nowrap', marginTop: '10px' }}>
-              <Grid container spacing={1}>
-              {complexList.map((complex) => (
-                <Button
-                  key={complex.id}
-                  variant={
-                    selectedComplex?.id === complex.id
-                      ? "contained"
-                      : "outlined"
-                  }
-                  color="primary"
-                  onClick={() => setSelectedComplex(complex)}
-                  style={{ margin: "5px" }}
-                >
-                  {complex.name}
-                </Button>
-              ))}
-              </Grid>
+              <Box
+                sx={{
+                  overflowX: "auto",
+                  whiteSpace: "nowrap",
+                  marginTop: "10px",
+                }}
+              >
+                <Grid container spacing={1}>
+                  {complexList.map((complex) => (
+                    <Button
+                      key={complex.id}
+                      variant={
+                        selectedComplex?.id === complex.id
+                          ? "contained"
+                          : "outlined"
+                      }
+                      color="primary"
+                      onClick={() => setSelectedComplex(complex)}
+                      // style={{ backgroundColor: selectedComplex?.id === complex.id
+                      //   ? "#00004B"
+                      //   : "gray" }}
+                        
+                    >
+                      {complex.name}
+                    </Button>
+                  ))}
+                </Grid>
               </Box>
             </Grid>
           </Grid>

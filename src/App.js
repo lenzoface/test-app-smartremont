@@ -13,6 +13,7 @@ import ComplexDetail from "./components/ComplexDetail"; // Import the detailed c
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./styles/theme";
 import CustomButton from "./components/CustomButton";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const App = () => {
   // Extract the first type and the first item within that type as default
@@ -125,6 +126,8 @@ const App = () => {
                 onChange={handleTypeChange}
                 fullWidth
                 variant="outlined"
+                  sx={{ "& .MuiSvgIcon-root": { color: "#D32F2F" } }}          
+          IconComponent={ExpandMoreIcon}
               >
                 {Object.keys(complexesData[0].type).map((type) => (
                   <MenuItem key={type} value={type}>

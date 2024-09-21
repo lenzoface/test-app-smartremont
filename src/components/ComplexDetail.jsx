@@ -82,7 +82,7 @@ function ComplexDetail({ complexes }) {
                   sx={{
                     padding: '1rem',
                     color: "#fff",
-                    backgroundColor: "red",
+                    backgroundColor: "#D32F2F",
                     "&:hover": {
                       backgroundColor: "#c62828", // Darker red on hover
                     },
@@ -94,7 +94,7 @@ function ComplexDetail({ complexes }) {
                   onClick={handleNextImage}
                   sx={{
                     color: "#fff",
-                    backgroundColor: "red",
+                    backgroundColor: "#D32F2F",
                     "&:hover": {
                       backgroundColor: "#c62828", // Darker red on hover
                     },

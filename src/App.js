@@ -11,7 +11,7 @@ import {
 import Grid from "@mui/material/Grid2";
 import complexesData from "./data/projects.json"; // JSON со списком ЖК
 import ComplexDetail from "./components/ComplexDetail"; // Import the Complex component
-import { ThemeProvider } from "@mui/material/styles";
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from "./styles/theme";
 import CustomButton from "./components/CustomButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -52,6 +52,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Container sx={{ my: 4 }}>
         {/* First row - Full width, text aligned left */}
         <Grid container spacing={2}>

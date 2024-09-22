@@ -29,6 +29,21 @@ const theme = createTheme({
         },
       },
     },
+    MuiCssBaseline: {
+      styleOverrides: {
+        '::-webkit-scrollbar': {
+          width: '8px', // Adjust scrollbar width
+          height: '8px', // For horizontal scrollbar
+        },
+        '::-webkit-scrollbar-thumb': {
+          backgroundColor: '#D32F2F', // Red thumb color
+          borderRadius: '0px', // Round the scrollbar
+        },
+        '::-webkit-scrollbar-track': {
+          backgroundColor: '#eaedf4', // Lighter track background (optional)
+        },
+      },
+    },
   },
 });
 

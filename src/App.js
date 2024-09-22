@@ -89,7 +89,7 @@ const App = () => {
             </Typography>
             <CustomButton>ВЫБРАТЬ ДИЗАЙН</CustomButton>
           </Grid>
-          <Grid size={{ xs: 12, md: 3 }}></Grid>
+          <Grid size={{ xs: 12, md: 3 }} sx={{ mb: 6 }}></Grid>
           {/* Second full-width section (Centered text) */}
           <Grid
             item
@@ -105,13 +105,13 @@ const App = () => {
               "::before": {
                 content: '""',
                 position: "absolute",
-                top: { xs: "10px", md: "30px" }, // Position adjustment
+                top: { xs: "-40px", md: "30px" }, // Position adjustment
                 left: { xs: "0px", md: "-10px" }, // Position adjustment
-                width: { xs: "200px", md: "400px" }, // Width enough to fit 20 dots horizontally
-                height: { xs: "50px", md: "100px" }, // Height enough to fit 5 dots vertically
-                backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="1" fill="red" /></svg>')`,
+                width: { xs: "800px", md: "400px" }, // Width enough to fit 20 dots horizontally
+                height: { xs: "40px", md: "100px" }, // Height enough to fit 5 dots vertically
+                backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="1" fill="%23D32F2F" /></svg>')`,
                 backgroundRepeat: "repeat",
-                backgroundSize: { xs: "5px 5px", md: "20px 20px" }, // Maintain 10px size for desktop
+                backgroundSize: { xs: "20px 20px", md: "20px 20px" }, // Maintain 10px size for desktop
                 zIndex: -1, // Dots behind the text
               },
             }}

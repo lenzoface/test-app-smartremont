@@ -6,11 +6,11 @@ import {
   Select,
   MenuItem,
   useMediaQuery,
-  Box
+  Box,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import complexesData from "./data/projects.json"; // JSON со списком ЖК
-import ComplexDetail from "./components/ComplexDetail"; // Import the detailed component
+import ComplexDetail from "./components/ComplexDetail"; // Import the Complex component
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./styles/theme";
 import CustomButton from "./components/CustomButton";
@@ -123,14 +123,14 @@ const App = () => {
                 padding: "4px", // Add a small padding around the text to separate it from the dots
               }}
             >
-            <Typography
-              variant="h4"
-              color="primary"
-              sx={{ lineHeight: 1.5, fontWeight: 400 }}
-            >
-              Мы успешно завершили уже{" "}
-              <span style={{ color: "#D32F2F" }}>более 450</span> ремонтов
-            </Typography>
+              <Typography
+                variant="h4"
+                color="primary"
+                sx={{ lineHeight: 1.5, fontWeight: 400 }}
+              >
+                Мы успешно завершили уже{" "}
+                <span style={{ color: "#D32F2F" }}>более 450</span> ремонтов
+              </Typography>
             </Box>
           </Grid>
         </Grid>
@@ -169,7 +169,6 @@ const App = () => {
               sx={{
                 overflowY: "auto",
                 maxHeight: rightGridHeight, // Set max height based on right component
-                // border: "1px solid #ddd", // Optional: add a border for visibility
               }}
             >
               {isMdScreen ? (
@@ -253,7 +252,6 @@ const App = () => {
               ref={rightGridRef}
               sx={{
                 flexShrink: 0, // Prevent shrinking
-                // border: "1px solid #ddd", // Optional: add a border for visibility
               }}
             >
               <Grid item>

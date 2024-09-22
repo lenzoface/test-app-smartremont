@@ -109,8 +109,8 @@ function ComplexDetail({ complexes }) {
               sx={{
                 position: "absolute",
                 bottom: -400,
-                right: 94,
-                width: "311px",
+                right: 95,
+                width: "316px",
                 height: "500px",
                 backgroundColor: "#dfeffe",
                 zIndex: -1,

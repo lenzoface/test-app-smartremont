@@ -6,6 +6,7 @@ import {
   Select,
   MenuItem,
   useMediaQuery,
+  Box
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import complexesData from "./data/projects.json"; // JSON со списком ЖК
@@ -13,7 +14,7 @@ import ComplexDetail from "./components/ComplexDetail"; // Import the detailed c
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./styles/theme";
 import CustomButton from "./components/CustomButton";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const App = () => {
   // Extract the first type and the first item within that type as default
@@ -97,15 +98,40 @@ const App = () => {
             pl={{ xs: 0, md: 6 }}
             pr={{ xs: 6, md: 0 }}
             align={{ xs: "left", md: "center" }}
+            sx={{
+              position: "relative",
+              display: "flex",
+              justifyContent: { xs: "flex-start", md: "center" },
+              "::before": {
+                content: '""',
+                position: "absolute",
+                top: { xs: "10px", md: "30px" }, // Position adjustment
+                left: { xs: "0px", md: "-10px" }, // Position adjustment
+                width: { xs: "200px", md: "400px" }, // Width enough to fit 20 dots horizontally
+                height: { xs: "50px", md: "100px" }, // Height enough to fit 5 dots vertically
+                backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="1" fill="red" /></svg>')`,
+                backgroundRepeat: "repeat",
+                backgroundSize: { xs: "5px 5px", md: "20px 20px" }, // Maintain 10px size for desktop
+                zIndex: -1, // Dots behind the text
+              },
+            }}
           >
+            <Box
+              sx={{
+                backgroundColor: "#fff", // Add white background behind the text
+                display: "inline-block", // Make sure background wraps only around the text
+                padding: "4px", // Add a small padding around the text to separate it from the dots
+              }}
+            >
             <Typography
               variant="h4"
               color="primary"
-              sx={{ lineHeight: 1.5, fontWeight: 500 }}
+              sx={{ lineHeight: 1.5, fontWeight: 400 }}
             >
               Мы успешно завершили уже{" "}
               <span style={{ color: "#D32F2F" }}>более 450</span> ремонтов
             </Typography>
+            </Box>
           </Grid>
         </Grid>
 
@@ -126,8 +152,8 @@ const App = () => {
                 onChange={handleTypeChange}
                 fullWidth
                 variant="outlined"
-                  sx={{ "& .MuiSvgIcon-root": { color: "#D32F2F" } }}          
-          IconComponent={ExpandMoreIcon}
+                sx={{ "& .MuiSvgIcon-root": { color: "#D32F2F" } }}
+                IconComponent={ExpandMoreIcon}
               >
                 {Object.keys(complexesData[0].type).map((type) => (
                   <MenuItem key={type} value={type}>
@@ -179,6 +205,8 @@ const App = () => {
                         );
                         setSelectedComplex(complex);
                       }}
+                      sx={{ "& .MuiSvgIcon-root": { color: "#D32F2F" } }}
+                      IconComponent={ExpandMoreIcon}
                     >
                       {complexList.map((complex) => (
                         <MenuItem key={complex.id} value={complex.id}>

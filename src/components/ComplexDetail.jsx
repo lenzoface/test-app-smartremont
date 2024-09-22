@@ -109,14 +109,28 @@ function ComplexDetail({ complexes }) {
           {/* Row 2: Name, Address, and Image Counter */}
           <Grid item size={10}>
             <Typography
-              variant="h5"
+              variant="h6"
               component="div"
-              style={{ fontWeight: "bold" }}
+              style={{ fontWeight: "600" }}
               display="inline"
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                color: "#00004B",
+                '&::before': {
+                  content: '""',
+                  display: 'inline-block',
+                  width: '10px',
+                  height: '10px',
+                  backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2.5" fill="%23D32F2F" /></svg>')`,
+                  backgroundSize: 'cover',
+                  marginRight: '10px', // Adjust spacing between dot and text
+                }
+              }}
             >
               {complexes.name} –
             </Typography>
-            <Typography variant="h5" color="textSecondary" display="inline">
+            <Typography variant="h6" color="textSecondary" display="inline">
               &nbsp;{complexes.address}
             </Typography>
           </Grid>
@@ -127,6 +141,7 @@ function ComplexDetail({ complexes }) {
           >
             <Typography
               style={{ alignItems: "right", justifyContent: "right" }}
+              sx={{color: "#00004B"}}
             >
               <b>{currentImageIndex + 1}</b>/{complexes.images.length}
             </Typography>
